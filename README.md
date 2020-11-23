@@ -1,7 +1,7 @@
 ## Caravela.Open.Virtuosity 
 Allows you to make all target methods virtual without adding the virtual keyword to every one of them.
 
-*This is a [Caravela](https://postsharp.net/caravela) aspect. It modifies your code during compilation by using source weaving.*
+*This is a [Caravela](https://github.com/postsharp/Caravela) aspect. It modifies your code during compilation by using source weaving.*
  
 [![CI badge](https://github.com/postsharp/Caravela.Open.Virtuosity/workflows/Full%20Pipeline/badge.svg)](https://github.com/postsharp/Caravela.Open.Virtuosity/actions?query=workflow%3A%22Full+Pipeline%22)
 
