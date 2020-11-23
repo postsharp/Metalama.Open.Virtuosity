@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <LangVersion>9.0</LangVersion>
+    <PackageId>Caravela.Open.Virtuosity</PackageId>
+    <Version>0.1.2</Version>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Caravela.Framework.Sdk" Version="0.1.31" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Caravela.Open.Virtuosity\Caravela.Open.Virtuosity.csproj" PrivateAssets="all" />
+  </ItemGroup>
+
+</Project>

@@ -3,11 +3,17 @@
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <TargetFramework>net5.0</TargetFramework>
+    <UsePackageReference>false</UsePackageReference>
   </PropertyGroup>
+  
+  <ItemGroup Condition="$(UsePackageReference) != 'true'">
+    <ProjectReference Include="..\Caravela.Open.Virtuosity.Weaver\Caravela.Open.Virtuosity.Weaver.csproj" OutputItemType="Analyzer" ReferenceOutputAssembly="false" />
+    <ProjectReference Include="..\Caravela.Open.Virtuosity\Caravela.Open.Virtuosity.csproj" OutputItemType="Analyzer" />
+    <PackageReference Include="Caravela.Framework" Version="0.1.31" />
+  </ItemGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\Caravela.Open.Virtuosity\Caravela.Open.Virtuosity.csproj" />
-    <PackageReference Include="Caravela.Framework" Version="0.1.22" />
+  <ItemGroup Condition="$(UsePackageReference) == 'true'">
+    <PackageReference Include="Caravela.Open.Virtuosity" Version="0.1.2" />
   </ItemGroup>
 
 </Project>
