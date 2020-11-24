@@ -6,22 +6,33 @@
     <!-- this property decides whether the weaver is referenced as a project (common for projects in the same solution) or as a NuGet package -->
     <UsePackageReference Condition="'$(UsePackageReference)' == ''">false</UsePackageReference>
   </PropertyGroup>
-  
-  <!-- to reference the weaver as a project, we need to add these three references separately -->
-  <ItemGroup Condition="$(UsePackageReference) != 'true'">
-    <ProjectReference Include="..\Caravela.Open.Virtuosity.Weaver\Caravela.Open.Virtuosity.Weaver.csproj" OutputItemType="Analyzer" ReferenceOutputAssembly="false" />
-    <ProjectReference Include="..\Caravela.Open.Virtuosity\Caravela.Open.Virtuosity.csproj" OutputItemType="Analyzer" />
-    <PackageReference Include="Caravela.Framework" Version="0.1.31" />
-  </ItemGroup>
 
-  <!-- to reference the weaver as a package, this one line is enough -->
-  <ItemGroup Condition="$(UsePackageReference) == 'true'">
-    <PackageReference Include="Caravela.Open.Virtuosity" Version="0.1.2" />
-  </ItemGroup>
-  <!-- add a NuGet source that points to where the weaver package is located -->
-  <!-- this is not necessary if the weaver package is on NuGet.org, or another configured package source -->
-  <PropertyGroup Condition="$(UsePackageReference) == 'true'">
-    <RestoreAdditionalProjectSources>../Caravela.Open.Virtuosity.Weaver/bin/$(Configuration)</RestoreAdditionalProjectSources>
-  </PropertyGroup>
+  <Choose>
+    <When Condition="$(UsePackageReference) != 'true'">
+
+      <!-- to reference the weaver as a project, we need to add these three references separately -->
+      <!-- OutputItemType="Analyzer" on the two ProjectReferences is needed so that Caravela can execute the weaver at build time -->
+      <!-- ReferenceOutputAssembly="false" ensures that this project does not have access to libraries that it shouldn't: Caravela SDK and Roslyn -->
+      <ItemGroup>
+        <ProjectReference Include="..\Caravela.Open.Virtuosity.Weaver\Caravela.Open.Virtuosity.Weaver.csproj" OutputItemType="Analyzer" ReferenceOutputAssembly="false" />
+        <ProjectReference Include="..\Caravela.Open.Virtuosity\Caravela.Open.Virtuosity.csproj" OutputItemType="Analyzer" />
+        <PackageReference Include="Caravela.Framework" Version="0.1.31" />
+      </ItemGroup>
+
+    </When>
+    <Otherwise>
+
+      <!-- to reference the weaver as a package, this one line is mostly enough -->
+      <ItemGroup>
+        <PackageReference Include="Caravela.Open.Virtuosity" Version="0.1.2" />
+      </ItemGroup>
+      <!-- we also need to add a NuGet source that points to where the weaver package is located -->
+      <!-- this is not necessary if the weaver package is on NuGet.org, or another configured package source -->
+      <PropertyGroup>
+        <RestoreAdditionalProjectSources>../Caravela.Open.Virtuosity.Weaver/bin/$(Configuration)</RestoreAdditionalProjectSources>
+      </PropertyGroup>
+
+    </Otherwise>
+  </Choose>
 
 </Project>
