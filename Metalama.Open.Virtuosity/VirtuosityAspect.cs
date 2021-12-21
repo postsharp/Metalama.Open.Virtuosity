@@ -1,7 +1,7 @@
 ﻿using System;
-using Caravela.Framework.Aspects;
+using Metalama.Framework.Aspects;
 
-namespace Caravela.Open.Virtuosity
+namespace Metalama.Open.Virtuosity
 {
     [AttributeUsage(AttributeTargets.Assembly)]
     public class VirtuosityAspect : Attribute, IAspect { }

@@ -2,9 +2,9 @@
 using System.Linq;
 using static System.Reflection.BindingFlags;
 
-[assembly: Caravela.Open.Virtuosity.VirtuosityAspect]
+[assembly: Metalama.Open.Virtuosity.VirtuosityAspect]
 
-namespace Caravela.Open.Virtuosity.TestApp
+namespace Metalama.Open.Virtuosity.TestApp
 {
     struct S
     {
