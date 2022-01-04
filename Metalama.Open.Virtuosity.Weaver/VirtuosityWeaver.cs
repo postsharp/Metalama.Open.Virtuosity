@@ -1,11 +1,11 @@
-﻿using Caravela.Framework.Sdk;
+﻿using Metalama.Framework.Sdk;
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
 using System.Linq;
 using static Microsoft.CodeAnalysis.CSharp.SyntaxKind;
 
-namespace Caravela.Open.Virtuosity
+namespace Metalama.Open.Virtuosity
 {
     [CompilerPlugin, AspectWeaver(aspectType: typeof(VirtuosityAspect))]
     class VirtuosityWeaver : IAspectWeaver
