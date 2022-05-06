@@ -4,8 +4,8 @@
     <Import Project="MainVersion.props" />
     
     <PropertyGroup>
-        <MetalamaOpenDependencyEmbedderVersion>$(MainVersion)$(PackageVersionSuffix)</MetalamaOpenDependencyEmbedderVersion>
-        <MetalamaOpenDependencyEmbedderAssemblyVersion>$(MainVersion)</MetalamaOpenDependencyEmbedderAssemblyVersion>
+        <MetalamaOpenVirtuosityVersion>$(MainVersion)$(PackageVersionSuffix)</MetalamaOpenVirtuosityVersion>
+        <MetalamaOpenVirtuosityAssemblyVersion>$(MainVersion)</MetalamaOpenVirtuosityAssemblyVersion>
     </PropertyGroup>
 
     
@@ -19,8 +19,8 @@
     <Import Project="Versions.g.props" Condition="Exists('Versions.g.props')" />
 
     <PropertyGroup>
-        <AssemblyVersion>$(MetalamaOpenDependencyEmbedderAssemblyVersion)</AssemblyVersion>
-        <Version>$(MetalamaOpenDependencyEmbedderVersion)</Version>
+        <AssemblyVersion>$(MetalamaOpenVirtuosityAssemblyVersion)</AssemblyVersion>
+        <Version>$(MetalamaOpenVirtuosityVersion)</Version>
     </PropertyGroup>
 
 </Project>
