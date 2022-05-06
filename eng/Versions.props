@@ -11,8 +11,7 @@
     
     <!-- Set the default versions of dependencies -->
     <PropertyGroup>
-        <PostSharpEngineeringVersion>1.0.22-preview</PostSharpEngineeringVersion>
-        <!-- TODO: Set to a public version before merging to master. -->
+        <PostSharpEngineeringVersion>1.0.65-preview</PostSharpEngineeringVersion>
 		<MetalamaVersion>branch:master</MetalamaVersion>
     </PropertyGroup>
 
