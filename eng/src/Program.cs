@@ -7,17 +7,7 @@ using PostSharp.Engineering.BuildTools.Build.Solutions;
 using PostSharp.Engineering.BuildTools.Dependencies.Model;
 using Spectre.Console.Cli;
 
-var productDependencyDefinition = new DependencyDefinition( "Metalama.Open.Virtuosity", VcsProvider.GitHub, "Metalama" )
-{
-    CiBuildTypes = new ConfigurationSpecific<string>(
-        "Metalama_MetalamaOpen_MetalamaOpenVirtuosity_DebugBuild",
-        "Metalama_MetalamaOpen_MetalamaOpenVirtuosity_ReleaseBuild",
-        "Metalama_MetalamaOpen_MetalamaOpenVirtuosity_PublicBuild" ),
-    DeploymentBuildType = "Metalama_MetalamaOpen_MetalamaOpenVirtuosity_PublicDeployment",
-    BumpBuildType = "Metalama_MetalamaOpen_MetalamaOpenVirtuosity_VersionBump"
-};
-
-var product = new Product(productDependencyDefinition)
+var product = new Product(Dependencies.MetalamaOpenVirtuosity)
 {
     Solutions = new Solution[] { new DotNetSolution( "Metalama.Open.Virtuosity.sln" ) { CanFormatCode = true } },
     PublicArtifacts = Pattern.Create( "Metalama.Open.Virtuosity.sln.nupkg" ),
