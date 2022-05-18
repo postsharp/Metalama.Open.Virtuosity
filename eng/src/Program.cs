@@ -10,7 +10,7 @@ using Spectre.Console.Cli;
 var product = new Product(Dependencies.MetalamaOpenVirtuosity)
 {
     Solutions = new Solution[] { new DotNetSolution( "Metalama.Open.Virtuosity.sln" ) { CanFormatCode = true } },
-    PublicArtifacts = Pattern.Create( "Metalama.Open.Virtuosity-$(PackageVersion).nupkg" ),
+    PublicArtifacts = Pattern.Create( "Metalama.Open.Virtuosity.$(PackageVersion).nupkg" ),
     Dependencies = new[] { Dependencies.PostSharpEngineering, Dependencies.Metalama },
     RequiresBranchMerging = true
 };
