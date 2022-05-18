@@ -5,7 +5,7 @@ VisualStudioVersion = 17.1.32421.90
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Metalama.Open.Virtuosity", "Metalama.Open.Virtuosity\Metalama.Open.Virtuosity.csproj", "{635CD564-B54F-4161-8A1B-93E78F02594D}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Metalama.Open.Virtuosity.Tests", "Metalama.Open.Virtuosity.TestApp\Metalama.Open.Virtuosity.Tests.csproj", "{FA54EA40-A1F0-49EE-AD17-6765858D6E21}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Metalama.Open.Virtuosity.UnitTests", "Metalama.Open.Virtuosity.UnitTests\Metalama.Open.Virtuosity.UnitTests.csproj", "{FA54EA40-A1F0-49EE-AD17-6765858D6E21}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{286E624E-DE94-47D5-932D-39490BA07C41}"
 	ProjectSection(SolutionItems) = preProject
