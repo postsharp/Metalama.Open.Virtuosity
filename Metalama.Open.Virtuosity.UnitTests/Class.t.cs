@@ -35,7 +35,7 @@ namespace Metalama.Open.Virtuosity.TestApp
         // Transformed (sealed removed).
         public override string ToString()
         {
-            return null;
+            return "";
         }
 
         // Not transformed.
