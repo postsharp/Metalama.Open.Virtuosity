@@ -1,17 +1,14 @@
-﻿// Copyright (c) SharpCrafters s.r.o. All rights reserved.
-// This project is not open source. Please see the LICENSE.md file in the repository root for details.
+﻿// This is an open-source Metalama example. See https://github.com/postsharp/Metalama.Samples for more.
 
 using System;
 using System.Threading.Tasks;
 
-#pragma warning disable CA1822 // Mark members as static
+#pragma warning disable CA1822  // Mark members as static
 #pragma warning disable IDE0051 // Remove unused private members
 
 namespace Metalama.Open.Virtuosity.TestApp
 {
-
     [Virtualize]
-
     internal class C : IDisposable
     {
         // Not transformed.
