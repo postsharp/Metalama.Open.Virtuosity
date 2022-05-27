@@ -1,5 +1,4 @@
-﻿// Copyright (c) SharpCrafters s.r.o. All rights reserved.
-// This project is not open source. Please see the LICENSE.md file in the repository root for details.
+﻿// This is an open-source Metalama example. See https://github.com/postsharp/Metalama.Samples for more.
 
 using Metalama.Compiler;
 using Metalama.Framework.Engine.AspectWeavers;
@@ -32,7 +31,7 @@ namespace Metalama.Open.Virtuosity
                     InterfaceDeclarationSyntax => false,
                     ClassDeclarationSyntax => true,
                     StructDeclarationSyntax => false,
-                    RecordDeclarationSyntax record when record.ClassOrStructKeyword.IsKind( SyntaxKind.StructKeyword ) => false,
+                    RecordDeclarationSyntax record when record.ClassOrStructKeyword.IsKind( StructKeyword ) => false,
                     RecordDeclarationSyntax => true,
                     _ => throw new ArgumentOutOfRangeException()
                 };
@@ -41,9 +40,9 @@ namespace Metalama.Open.Virtuosity
             private static SyntaxTokenList ModifierModifiers( SyntaxTokenList modifiers, bool addVirtual = true )
             {
                 // Remove the sealed modifier.
-                var sealedToken = modifiers.FirstOrDefault( modifier => modifier.IsKind( SyntaxKind.SealedKeyword ) );
+                var sealedToken = modifiers.FirstOrDefault( modifier => modifier.IsKind( SealedKeyword ) );
 
-                if ( !sealedToken.IsKind( SyntaxKind.None ) )
+                if ( !sealedToken.IsKind( None ) )
                 {
                     modifiers = modifiers.Remove( sealedToken );
                 }
@@ -52,7 +51,7 @@ namespace Metalama.Open.Virtuosity
                 if ( addVirtual )
                 {
                     if ( !_forbiddenModifiers.Any( modifier => modifiers.Any( modifier ) )
-                        && _requiredModifiers.Any( modifier => modifiers.Any( modifier ) ) )
+                         && _requiredModifiers.Any( modifier => modifiers.Any( modifier ) ) )
                     {
                         modifiers = modifiers.Add( SyntaxFactory.Token( VirtualKeyword ).WithTrailingTrivia( SyntaxFactory.ElasticSpace ) );
                     }
