@@ -7,6 +7,7 @@ using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
 using System;
 using System.Linq;
+using System.Threading.Tasks;
 using static Microsoft.CodeAnalysis.CSharp.SyntaxKind;
 
 namespace Metalama.Open.Virtuosity
@@ -14,9 +15,9 @@ namespace Metalama.Open.Virtuosity
     [MetalamaPlugIn]
     public class VirtuosityWeaver : IAspectWeaver
     {
-        void IAspectWeaver.Transform( AspectWeaverContext context )
+        public Task TransformAsync( AspectWeaverContext context )
         {
-            context.RewriteAspectTargets( new Rewriter() );
+            return context.RewriteAspectTargetsAsync( new Rewriter() );
         }
 
         private class Rewriter : CSharpSyntaxRewriter
