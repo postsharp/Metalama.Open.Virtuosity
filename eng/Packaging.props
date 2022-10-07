@@ -6,7 +6,7 @@
     <PropertyGroup>
         <Authors>PostSharp Technologies</Authors>
         <PackageProjectUrl>https://github.com/postsharp/Metalama.Open.Virtuosity</PackageProjectUrl>
-        <PackageTags></PackageTags>
+        <PackageTags>PostSharp Metalama AOP</PackageTags>
         <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
         <PackageLicenseFile>LICENSE.md</PackageLicenseFile>
     </PropertyGroup>
