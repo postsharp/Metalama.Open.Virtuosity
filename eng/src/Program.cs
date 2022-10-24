@@ -23,7 +23,8 @@ var product = new Product(Dependencies.MetalamaOpenVirtuosity)
             MSBuildName: "Release",
             RequiresSigning: true,
             PublicPublishers: Product.DefaultPublicPublishers.Add( new MergePublisher() ).ToArray() ) ),
-    BuildAgentType = "caravela03"
+    BuildAgentType = "caravela03",
+    PublishTestResults = true
 };
 
 var commandApp = new CommandApp();
