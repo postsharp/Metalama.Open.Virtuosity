@@ -16,7 +16,7 @@ var product = new Product(Dependencies.MetalamaOpenVirtuosity)
         new DotNetSolution( "Metalama.Open.Virtuosity.sln" ) { CanFormatCode = true },
         new DotNetSolution( "src\\tests\\Metalama.Open.Virtuosity.TestApp\\Metalama.Open.Virtuosity.TestApp.sln" ) { IsTestOnly = true }
     },
-    PublicArtifacts = Pattern.Create( "Metalama.Open.Virtuosity.$(PackageVersion).nupkg" ),
+    PublicArtifacts = Pattern.Create( "Metalama.Open.Virtuosity.$(PackageVersion).nupkg", "Metalama.Open.Virtuosity.Redist.$(PackageVersion).nupkg" ),
     Dependencies = new[] { Dependencies.PostSharpEngineering, Dependencies.Metalama },
     Configurations = Product.DefaultConfigurations
         .WithValue( BuildConfiguration.Public, new BuildConfigurationInfo(
